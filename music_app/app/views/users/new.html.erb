@@ -1,0 +1,32 @@
+<div id='sign-up-form'>
+  <!-- White logo -->
+  <img class='spotify-logo' src="https://mbtskoudsalg.com/images/itunes-logo-white-png-1.png" alt="spotify-logo">
+  <!-- Green (smaller) logo -->
+  <!-- <img class='spotify-logo' src="http://pluspng.com/img-png/spotify-logo-png-spotify-vector-logo-720.png"> -->
+
+  <form class='form' action="<%= users_url %>" method="post">
+    <input
+      type="hidden"
+      name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+
+    <p>
+      <span>
+        <input id='new-user-email' type="text" name="user[email]" value="Username">
+      </span>
+    </p>
+
+    <p>
+      <span id='passcontainer'>
+         <input id='new-user-password' onfocus="return makeItPassword()" name="user[password]" type="text" value="Password" />
+      </span>
+    </p>
+
+    <input type="submit" value="SIGN UP">
+
+    <p>
+      <a class='button' href=<%= new_session_url %> >Already have an account?</a>
+    </p>
+
+  </form>
+</div>

@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+body, html {
+  margin: 0;
+  display: grid;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(40, 40, 40);
+  color: rgb(255, 255, 255);
+}
+
+input[type=submit] {
+  border: 0;
+  border-radius: 15px;
+  background-color: rgb(30, 215, 96);
+  color: rgb(255, 255, 255);
+  font-size: .85em;
+}
+
+#sign-up-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+a:visited {
+  text-decoration: none;
+  color: rgb(170, 170, 170);
+}
+
+.spotify-logo {
+  width: 340px;
+  height: auto;
+  margin-bottom: 30px;
+}

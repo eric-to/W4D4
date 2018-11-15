@@ -15,15 +15,15 @@ class User < ApplicationRecord
 
   def self.generate_session_token
     token = SecureRandom.urlsafe_base64(16)
-
-    # Regenerates the token in case there is a conflict
-    while self.class.exists?(session_token: token)
-      token = SecureRandom.urlsafe_base64(16)
-    end
+    #
+    # # Regenerates the token in case there is a conflict
+    # while self.class.exists?(session_token: token)
+    #   token = SecureRandom.urlsafe_base64(16)
+    # end
     token
   end
 
-  def reset_token_session!
+  def reset_session_token!
     self.session_token = self.class.generate_session_token
 
     # Tries to save the current user with updated attributes

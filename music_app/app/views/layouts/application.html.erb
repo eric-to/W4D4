@@ -7,6 +7,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Changes password element from text to password upon clicking to allow a default password -->
+    <script type="text/javascript">
+      function makeItPassword()
+      {
+         document.getElementById("passcontainer")
+            .innerHTML = "<input id=\"new-user-password\" name=\"user[password]\" type=\"password\"/>";
+         document.getElementById("password").focus();
+      }
+   </script>
+
   </head>
 
   <body>
