@@ -1,4 +1,13 @@
-<h1>User Profile</h1>
-<p>
-  Email: <%= current_user.email %>
-</p>
+<div id="user-profile">
+  <h1>Hi <%= current_user %></h1>
+  <p>
+    Your email: <%= current_user.email %>
+  </p>
+
+  <form id='sign-out-button' action=<%= session_url %> method='post'>
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Sign Out">
+  </form>
+
+</div>

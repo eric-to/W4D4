@@ -56,6 +56,10 @@ input[type=submit] {
   width: 50%;
 }
 
+#sign-out-button {
+  width: 30%;
+}
+
 #sign-up-form {
   display: flex;
   flex-direction: column;
@@ -65,6 +69,28 @@ input[type=submit] {
   min-height: 100vh;
 
   background-color: rgb(40, 40, 40, 0.35)
+}
+
+#user-profile, #sign-in-form, #make-new-band {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+
+  background-color: rgb(40, 40, 40)
+}
+
+#all-bands {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+
+  background-color: rgb(40, 40, 40)
 }
 
 .form-wrapper {
@@ -80,4 +106,10 @@ a:visited {
   width: 340px;
   height: auto;
   margin-bottom: 30px;
+}
+
+.invalid-signup-alert {
+  list-style: none;
+  color: white;
+  text-align: left;
 }

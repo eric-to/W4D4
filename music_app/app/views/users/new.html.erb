@@ -4,13 +4,13 @@
   <!-- Green (smaller) logo -->
   <!-- <img class='spotify-logo' src="http://pluspng.com/img-png/spotify-logo-png-spotify-vector-logo-720.png"> -->
 
-  <%= if flash.errors[:errors] %>
-    <ul>
-      <%= flash.errors[:errors].each do |error| %>
-        <li><%= error %></li>
-      <%= end %>
+  <% if flash.now[:errors] %>
+    <ul class="invalid-signup-alert">
+      <% flash.now[:errors].reverse.each do |error| %>
+        <li><%= error %> :(</li>
+      <% end %>
     </ul>
-  <%= end %>
+  <% end %>
 
   <form class='form' action="<%= users_url %>" method="post">
     <input

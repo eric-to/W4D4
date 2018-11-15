@@ -1,6 +1,5 @@
 class Album < ApplicationRecord
   belongs_to :band
-  has_many :tracks, dependent: :destroy
 
   # can't use presence validation with boolean field
   validates :band, :name, :year, presence: true

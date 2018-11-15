@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
 
   resources :bands
+
+  resources :albums, only: [:show, :create, :edit, :update, :destroy]
 end
