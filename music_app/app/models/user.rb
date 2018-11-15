@@ -1,11 +1,17 @@
 class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :email, :password_digest, :session_token, presence: true
+  validate :not_default_user_credentials
 
   attr_reader :password
 
   after_initialize :ensure_session_token
 
+  def not_default_user_credentials
+    if (self.email == 'Username' || password == 'Password')
+      errors.add(:email, "Invalid username or password")
+    end
+  end
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -42,6 +48,6 @@ class User < ApplicationRecord
   end
 
   def is_password?(password)
-    BCrypt.new(self.password_digiest).is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 end

@@ -4,6 +4,14 @@
   <!-- Green (smaller) logo -->
   <!-- <img class='spotify-logo' src="http://pluspng.com/img-png/spotify-logo-png-spotify-vector-logo-720.png"> -->
 
+  <%= if flash.errors[:errors] %>
+    <ul>
+      <%= flash.errors[:errors].each do |error| %>
+        <li><%= error %></li>
+      <%= end %>
+    </ul>
+  <%= end %>
+
   <form class='form' action="<%= users_url %>" method="post">
     <input
       type="hidden"
@@ -12,13 +20,13 @@
 
     <p>
       <span>
-        <input id='new-user-email' type="text" name="user[email]" value="Username">
+        <input id='new-user-email' type="text" name="user[email]" placeholder="Username">
       </span>
     </p>
 
     <p>
       <span id='passcontainer'>
-         <input id='new-user-password' onfocus="return makeItPassword()" name="user[password]" type="text" value="Password" />
+         <input id='new-user-password' name="user[password]" type="password" placeholder="Password" />
       </span>
     </p>
 
