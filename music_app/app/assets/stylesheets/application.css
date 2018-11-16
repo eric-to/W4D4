@@ -40,8 +40,10 @@ input {
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
+  font-size: 12px;
 
   background-color: rgb(40, 40, 40, 0.5);
+  color: rgb(255, 255, 255, 0.85);
 }
 
 input[type=submit] {
@@ -60,7 +62,11 @@ input[type=submit] {
   width: 30%;
 }
 
-#sign-up-form {
+#sign-in-button {
+  width: 75%;
+}
+
+#sign-up-form, #sign-in-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +77,7 @@ input[type=submit] {
   background-color: rgb(40, 40, 40, 0.35)
 }
 
-#user-profile, #sign-in-form, #make-new-band {
+#user-profile, #make-new-band, #show-band {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,7 +85,7 @@ input[type=submit] {
   text-align: center;
   min-height: 100vh;
 
-  background-color: rgb(40, 40, 40)
+  background-color: rgb(40, 40, 40, 0.85)
 }
 
 #all-bands {
@@ -103,7 +109,7 @@ a:visited {
 }
 
 .spotify-logo {
-  width: 340px;
+  width: 360px;
   height: auto;
   margin-bottom: 30px;
 }
@@ -111,5 +117,24 @@ a:visited {
 .invalid-signup-alert {
   list-style: none;
   color: white;
-  text-align: left;
+  align-items: center;
+}
+
+
+
+/* TEST CSS */
+.all-bands-container ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 2px;
+  padding: 0;
+
+  color: black;
+}
+
+.all-bands-container li {
+  background-color: #FFFFFF;
+  font-size: 18px;
+  list-style: none;
+  padding: 50px;
 }

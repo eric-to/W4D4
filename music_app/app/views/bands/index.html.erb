@@ -12,3 +12,14 @@
     <li><a class='button' href="<%= new_band_url %>" >New band</a></li>
   </ul>
 </div>
+
+
+
+
+<div class="all-bands-container">
+  <ul id="band-list">
+    <% @bands.each do |band| %>
+      <li><%= band.name %></li>
+    <% end  %>
+  </ul>
+</div>

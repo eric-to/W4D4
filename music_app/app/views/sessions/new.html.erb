@@ -1,8 +1,6 @@
 <div id='sign-in-form'>
   <h2 class='page-header'>Sign In</h2>
 
-  <a class='button' href=<%= new_user_url %> >Nevermind, I want to sign up!</a>
-
   <form class='form' action="<%= session_url %>" method="post">
     <input
       type="hidden"
@@ -10,13 +8,17 @@
       value="<%= form_authenticity_token %>">
 
     <p>
-      <input id='new-user-email' type="text" name="user[email]" placeholder="Email">
+      <input id='new-user-email' type="text" name="user[email]" placeholder="Username">
     </p>
 
     <p>
       <input id='new-user-password' type="password" name="user[password]" placeholder="Password">
     </p>
 
-    <input type="submit">
+    <input id='sign-in-button' type="submit" value="LOG IN">
+
+    <p>
+      <a class='button' href=<%= new_user_url %> >Nevermind, I want to sign up!</a>
+    </p>
   </form>
 </div>

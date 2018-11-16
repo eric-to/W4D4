@@ -7,7 +7,7 @@
   <% if flash.now[:errors] %>
     <ul class="invalid-signup-alert">
       <% flash.now[:errors].reverse.each do |error| %>
-        <li><%= error %> :(</li>
+        <li>Oh no, <%= error.capitalize %></li>
       <% end %>
     </ul>
   <% end %>
